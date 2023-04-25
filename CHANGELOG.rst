@@ -2,6 +2,12 @@
 Changelog
 =========
 
+0.1.1 (25.4.2023)
+------------------
+
+* Updated documentation and its auto-generation
+* Added pyproject.toml
+
 0.1.0 (25.4.2023)
 ------------------
 
