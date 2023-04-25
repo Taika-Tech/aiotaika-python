@@ -1,0 +1,4 @@
+Sphinx>=6
+sphinx_rtd_theme
+aiomysql>=0.1.1
+asyncio_mqtt>=0.16.1

@@ -44,11 +44,13 @@ a couple of imports first::
     from aiotaika.ring import RingMoveEvent
 
 First, we implement a callback that will be called whenever a RingMoveEvent
-is triggered for our chosen ring. This event muse conform to the event
+is triggered for our chosen ring. This event must conform to the event
 callback type (Callable[[Event], Awaitable[None]])::
 
     async def move_evt_cb(event: RingMoveEvent) -> None:
-        print(event.position)
+        # print out the position if it's y component is over 1.0
+        if event.position.y > 1.0:
+            print(event.position)
 
 Now, we tell the client context manager to trigger this callback when our
 chosen ring moves::
@@ -64,7 +66,9 @@ program!::
     from aiotaika.ring import RingMoveEvent
 
     async def cb(event: RingMoveEvent) -> None:
-        print(event.position)
+        # print out the position if it's y component is over 1.0
+        if event.position.y > 1.0:
+            print(event.position)
 
     async def main() -> None:
         async with TaikaClient(host="myhostname",
