@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools >= 65", "setuptools-scm >= 7"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aiotaika"
+description = "Taika asynchronous client library for Python"
+readme = "README.md"
+authors = [{ name = "Taika Tech Oy", email = "dev@taikatech.fi" }]
+maintainers = [
+    { name = "Jussi Hietanen", email = "jussi@taikatech.fi" },
+]
+keywords = ["async", "asyncio", "taika", "client", "iot"]
+license = { text = "LGPL-2.1 license" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">= 3.8"
+dependencies = [
+    "aiomysql>=0.1.1",
+    "asyncio_mqtt>=0.16.1",
+]
+dynamic = ["version"]
+
+[project.urls]
+"Source code" = "https://github.com/Taika-Tech/aiotaika-python"
+"Issue tracker" = "https://github.com/Taika-Tech/aiotaika-python/issues"
+
+[project.optional-dependencies]
+lint = ["mypy>=1.2.0", "ruff==0.0.261", "markdownlint>=0.12.0"]
+format = ["black>=23.3.0", "flake8>=6.0.0", "bandit>=1.7.4", "isort>=5.12.0"]
+docs = ["sphinx>=5.3.0", "sphinx-rtd-theme>=1.2.0"]
+
+[tool.setuptools] # https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+packages = ["aiotaika"]
+
+[tool.setuptools_scm] # https://github.com/pypa/setuptools_scm/
+write_to = "aiotaika/_version.py"
