@@ -23,7 +23,7 @@ However, the Event type must be a parent class of all incoming event objects in 
 callback function. Here `RingGestureEvent` and `RingMoveEvent` inherit from
 `RingEvent`.
 
-```
+```python
 import asyncio
 
 from aiotaika import TaikaClient
@@ -63,7 +63,7 @@ This example shows simply how all the incoming events can be handled via the `ev
 AsyncGenerator of the `TaikaClient` class. In this example, we simply print out a
 ring's name and position when a `RingMoveEvent` happens.
 
-```
+```python
 import asyncio
 
 from aiotaika import TaikaClient
