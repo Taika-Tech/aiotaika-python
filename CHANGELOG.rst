@@ -2,6 +2,14 @@
 Changelog
 =========
 
+0.1.2 (26.4.2023)
+------------------
+
+* Added copyright notices to source files
+* Updated pyproject.toml for automatic PyPI versioning
+* Updated readme with examples and requirements
+* Updated examples inside the examples folder
+
 0.1.1 (25.4.2023)
 ------------------
 
