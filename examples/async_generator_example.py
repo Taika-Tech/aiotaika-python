@@ -7,7 +7,7 @@ from sys import path
 path.insert(1, dirname(dirname(abspath(__file__))))
 
 from aiotaika import TaikaClient  # NOQA
-from aiotaika.ring import RingGestureEvent  # NOQA
+from aiotaika.ring import RingMoveEvent  # NOQA
 
 parser = argparse.ArgumentParser(description="Taika AIO library example")
 parser.add_argument("host", help="hostname of Taika centralunit")
@@ -28,8 +28,9 @@ async def main() -> None:
     ) as taika:
         async with taika.events() as events:
             async for event in events:
-                if isinstance(event, RingGestureEvent):
-                    print(event.gesture)
+                if isinstance(event, RingMoveEvent):
+                    print(f"x: {event.position.x}, z: {event.position.z}")
+                    print(f"height: {event.position.y}")
 
 
 try:

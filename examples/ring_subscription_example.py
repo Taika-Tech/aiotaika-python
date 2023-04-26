@@ -18,7 +18,7 @@ parser.add_argument("--debug", help="enable debug logging", action="store_true")
 args = parser.parse_args()
 
 
-async def my_cb(event: RingMoveEvent) -> None:
+async def my_callback(event: RingMoveEvent) -> None:
     print(event.position)
 
 
@@ -34,7 +34,7 @@ async def main() -> None:
         rings = taika.rings
         for key, ring in rings.items():
             print("{}: {}".format(key, ring.metadata))
-        await rings[3].register_event_cb(EventType.RING_MOVE_EVT, my_cb)
+        await rings[3].register_event_cb(EventType.RING_MOVE_EVT, my_callback)
         await asyncio.sleep(5)
 
 
